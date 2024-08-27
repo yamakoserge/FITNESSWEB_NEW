@@ -52,4 +52,13 @@ export class WorkoutComponent {
       caloriesBurned: [null, [Validators.required]],
     });
   }
+
+  submitForm(){
+    this.userService.postWorkout(this.workoutForm.value).subscribe(res=>{
+      this.message.success("Workout posted successfully", {nzDuration: 3000});
+      this.workoutForm.reset();
+    },error=>{
+      this.message.error("Error while posting workout", {nzDuration:3000})
+    })
+  }
 }

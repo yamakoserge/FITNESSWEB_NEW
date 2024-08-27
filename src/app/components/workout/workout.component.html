@@ -10,7 +10,7 @@
         style="margin-top: 16px"
         nzTitle="Post New Worhout"
       >
-        <form nz-form [formGroup]="workoutForm" class="custom-form">
+        <form nz-form [formGroup]="workoutForm" (ngSubmit)="submitForm()" class="custom-form">
           <nz-form-item>
             <nz-form-control nzErrorTip="Please input the calories!">
               <input
