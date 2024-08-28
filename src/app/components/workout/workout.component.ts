@@ -37,9 +37,7 @@ export class WorkoutComponent {
     'Climbing',
     'Plyometrics',
   ];
-
-  workouts: any;
-
+ workouts: any;
   constructor(
     private fb: FormBuilder,
     private userService: UserService,
