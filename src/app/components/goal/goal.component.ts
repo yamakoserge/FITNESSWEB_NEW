@@ -31,4 +31,13 @@ export class GoalComponent {
       endDate: [null, [Validators.required]],
     });  
   }
+
+  submitForm(){
+    this.userService.postGoal(this.goalForm.value).subscribe(res=>{
+      this.message.success("Goal posted successfully", { nzDuration:3000});
+      this.goalForm.reset();
+    },error=>{
+      this.message.error("error while posting goal", {nzDuration:3000})
+    })
+  }
 }
